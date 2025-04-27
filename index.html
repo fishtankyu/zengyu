@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hacker Portfolio</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Typing effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .glitch {
+      color: #00ff00;
+      font-size: 2rem;
+      position: relative;
+    }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #00ff00;
+      clip: rect(0, 900px, 0, 0);
+    }
+    .glitch::before {
+      animation: glitchTop 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      animation: glitchBottom 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      50% { clip: rect(0, 9999px, 20px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      50% { clip: rect(20px, 9999px, 60px, 0); }
+      100% { clip: rect(0, 9999px, 0, 0); }
+    }
+  </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+  <h1 class="glitch" data-text="Welcome, Hacker!">Welcome, Hacker!</h1>
+  
+  <div class="text-xl mt-6">
+    <span id="typed-text"></span>
+  </div>
+
+  <div class="mt-12 space-x-4">
+    <a href="#about" class="px-6 py-2 bg-green-500 text-black rounded hover:bg-green-300 transition">About</a>
+    <a href="#projects" class="px-6 py-2 bg-green-500 text-black rounded hover:bg-green-300 transition">Projects</a>
+    <a href="#contact" class="px-6 py-2 bg-green-500 text-black rounded hover:bg-green-300 transition">Contact</a>
+  </div>
+
+  <section id="about" class="mt-20 max-w-xl text-center">
+    <h2 class="text-2xl mb-4">About Me</h2>
+    <p>I am a passionate coder exploring the cyber world...</p>
+  </section>
+
+  <section id="projects" class="mt-20 max-w-xl text-center">
+    <h2 class="text-2xl mb-4">Projects</h2>
+    <p>Coming soon... 🧠👾</p>
+  </section>
+
+  <section id="contact" class="mt-20 mb-20 max-w-xl text-center">
+    <h2 class="text-2xl mb-4">Contact Me</h2>
+    <p>DM me on GitHub ✉️</p>
+  </section>
+
+  <script>
+    var typed = new Typed('#typed-text', {
+      strings: ['Initializing...', 'Access granted!', 'Welcome to my GitHub page.'],
+      typeSpeed: 50,
+      backSpeed: 25,
+      loop: true
+    });
+  </script>
+
+</body>
+</html>
